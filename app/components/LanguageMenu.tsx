@@ -13,11 +13,14 @@ export default function LanguageMenu() {
   ];
 
   const getLanguageUrl = (langCode: string) => {
-    if (langCode === 'en') {
-      return isEnglish ? pathname : '/en' + pathname;
-    } else {
-      return isEnglish ? pathname.replace('/en', '') : pathname;
-    }
+    // Сначала убираем префикс /en, если он есть
+    const basePath = isEnglish ? pathname.replace('/en', '') : pathname;
+    
+    // Если путь пустой после удаления /en, возвращаем "/"
+    const normalizedPath = basePath || '/';
+    
+    // Затем добавляем нужный префикс для английского языка
+    return langCode === 'en' ? `/en${normalizedPath}` : normalizedPath;
   };
 
   return (
@@ -27,12 +30,6 @@ export default function LanguageMenu() {
           key={lang.code}
           href={getLanguageUrl(lang.code)}
           className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded"
-          onClick={() => {
-            // Добавляем небольшую задержку для анимации закрытия меню
-            setTimeout(() => {
-              window.location.href = getLanguageUrl(lang.code);
-            }, 150);
-          }}
         >
           {lang.label}
         </Link>
