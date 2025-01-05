@@ -51,23 +51,22 @@ export default function Home() {
       {/* Modal */}
       {selectedCard && (
         <div 
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-0 md:p-4 z-50"
           onClick={() => setSelectedCard(null)}
         >
           <div 
             className="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-2xl w-full"
-            onClick={(e) => e.stopPropagation()}
           >
-            <h3 className="text-2xl font-bold mb-4">{selectedCard.alt}</h3>
-            <div className="relative aspect-video mb-4">
+            <h3 className="text-2xl font-bold mb-4 p-4 md:p-0">{selectedCard.alt}</h3>
+            <div className="relative aspect-video w-full">
               <Image
                 src={`/${selectedCard.image}`}
                 alt={selectedCard.alt}
                 fill
-                className="object-cover rounded"
+                className="object-cover"
               />
             </div>
-            <p className="text-gray-600 dark:text-gray-300">
+            <p className="text-gray-600 dark:text-gray-300 p-4 md:p-0 mt-4">
               {selectedCard.description}
             </p>
           </div>
