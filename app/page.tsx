@@ -1,6 +1,10 @@
+'use client'; 
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
+  const [selectedProblem, setSelectedProblem] = useState<typeof problems[0] | null>(null);
+
   return (
     <main className="min-h-screen">
       {/* Hero section */}
@@ -23,29 +27,77 @@ export default function Home() {
         </p>
         <div className="grid grid-cols-3 gap-[1px] bg-gray-200 dark:bg-gray-700">
           {problems.map((problem, index) => (
-            <div key={index} className="aspect-square p-4 bg-white dark:bg-gray-800">
-              <h3 className="text-lg font-semibold mb-2">{problem.title}</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300">{problem.description}</p>
+            <div 
+              key={index} 
+              className="aspect-square bg-white dark:bg-gray-800 cursor-pointer"
+              onClick={() => setSelectedProblem(problem)}
+            >
+              {
+                <div className="relative w-full h-full">
+                  <Image
+                    src={`/${problem.image}`}
+                    alt={problem.alt}
+                    width={500}
+                    height={500}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end justify-center">
+                    <h3 className="text-sm font-bold text-white pb-4">{problem.alt}</h3>
+                  </div>
+                </div>
+              }
             </div>
           ))}
         </div>
       </section>
+
+      {/* Modal */}
+      {selectedProblem && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+          onClick={() => setSelectedProblem(null)}
+        >
+          <div 
+            className="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-2xl w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h3 className="text-2xl font-bold mb-4">{selectedProblem.alt}</h3>
+            <div className="relative aspect-video mb-4">
+              <Image
+                src={`/${selectedProblem.image}`}
+                alt={selectedProblem.alt}
+                fill
+                className="object-cover rounded"
+              />
+            </div>
+            <p className="text-gray-600 dark:text-gray-300">
+              {selectedProblem.description || "Описание проблемы будет добавлено позже."}
+            </p>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
 
 const problems = [
   {
-    title: "Технологическая безработица",
-    description: "Создаем новые рабочие места и возможности в эпоху автоматизации"
+    type: "image",
+    image: "replace-human.jpg",
+    alt: "Безработица",
+    description: "Искусственный интеллект может автоматизировать многие рабочие места, что может привести к временной безработице. Однако он также создает новые возможности и профессии."
   },
   {
-    title: "Монополизация рынка",
-    description: "Децентрализованная модель управления против корпоративной монополии"
+    type: "image",
+    image: "pollution.jpg",
+    alt: "Загрязнение",
+    description: "Искусственный интеллект может помочь в решении проблемы загрязнения, но также может создать новые проблемы."
   },
   {
-    title: "Социальное неравенство",
-    description: "Справедливое распределение прибыли и ресурсов между участниками"
+    type: "image",
+    image: "poverty.webp",
+    alt: "Бедность",
+    description: "Искусственный интеллект может помочь в решении проблемы бедности, но также может создать новые проблемы."
   },
   // Добавьте остальные проблемы
 ];
