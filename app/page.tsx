@@ -1,77 +1,74 @@
-'use client'; 
-import Image from "next/image";
+'use client';
 import { useState } from "react";
+import Image from "next/image";
+import CardSection from "./components/CardSection";
 
 export default function Home() {
-  const [selectedProblem, setSelectedProblem] = useState<typeof problems[0] | null>(null);
+  const [selectedCard, setSelectedCard] = useState<(typeof problems[0] | typeof opportunities[0]) | null>(null);
 
   return (
     <main className="min-h-screen">
       {/* Hero section */}
       <section className="min-h-1/4 flex flex-col items-center justify-center p-6 text-center bg-gradient-to-b from-background to-blue-50 dark:to-blue-950">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          AiShare
+        <h1 className="text-4xl md:text-6xl font-bold mb-0">
+        Ai меняет жизнь
         </h1>
         <p className="text-xl md:text-2xl mb-2 max-w-2xl">
-          Ai меняет бизнес, экономику, мир.<br/>
-          Используй преимущество сейчас!
+          Благо или катастрофа?
+        </p>
+        <p className="text-sm md:text-lg mb-0 max-w-2xl">
+        Основной доход для большинства людей - зарплата.<br></br> 
+        Ai автоматизирует бизнес и сокращает рабочие места.<br></br>
+        Бизнес перекачивает деньги от покупателей к владельцам.<br></br> 
+        Без работы люди не могут покупать также как раньше.<br></br>
+        Они меньше участвуют в экономике, а бизнес теряет покупателей. <br></br>
+
         </p>
       </section>
+
+      {/* Opportunities section */}
+      <CardSection
+        title="Новые возможности"
+        subtitle={[
+          "Используй их сейчас!"
+        ]}
+        cards={opportunities}
+        onCardClick={setSelectedCard}
+      />
 
       {/* Problems section */}
-      <section className="py-6 px-2">
-        <h2 className="text-3xl font-bold text-center mb-0">Глобальные проблемы</h2>
-        <p className="text-sm md:text-sm text-center mb-4 max-w-2xl">
-          Ai может их усугубить или Ai может их решить.
-          <br/>Выбор за тобой!
-        </p>
-        <div className="grid grid-cols-3 gap-[1px] bg-gray-200 dark:bg-gray-700">
-          {problems.map((problem, index) => (
-            <div 
-              key={index} 
-              className="aspect-square bg-white dark:bg-gray-800 cursor-pointer"
-              onClick={() => setSelectedProblem(problem)}
-            >
-              {
-                <div className="relative w-full h-full">
-                  <Image
-                    src={`/${problem.image}`}
-                    alt={problem.alt}
-                    width={500}
-                    height={500}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end justify-center">
-                    <h3 className="text-sm font-bold text-white pb-4">{problem.alt}</h3>
-                  </div>
-                </div>
-              }
-            </div>
-          ))}
-        </div>
-      </section>
+      <CardSection
+        title="Глобальные проблемы"
+        subtitle={[
+          "Ai может их решить... или сделать хуже",
+        ]}
+        cards={problems}
+        onCardClick={setSelectedCard}
+      />
+
+
 
       {/* Modal */}
-      {selectedProblem && (
+      {selectedCard && (
         <div 
           className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
-          onClick={() => setSelectedProblem(null)}
+          onClick={() => setSelectedCard(null)}
         >
           <div 
             className="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-2xl w-full"
             onClick={(e) => e.stopPropagation()}
           >
-            <h3 className="text-2xl font-bold mb-4">{selectedProblem.alt}</h3>
+            <h3 className="text-2xl font-bold mb-4">{selectedCard.alt}</h3>
             <div className="relative aspect-video mb-4">
               <Image
-                src={`/${selectedProblem.image}`}
-                alt={selectedProblem.alt}
+                src={`/${selectedCard.image}`}
+                alt={selectedCard.alt}
                 fill
                 className="object-cover rounded"
               />
             </div>
             <p className="text-gray-600 dark:text-gray-300">
-              {selectedProblem.description || "Описание проблемы будет добавлено позже."}
+              {selectedCard.description}
             </p>
           </div>
         </div>
@@ -100,4 +97,43 @@ const problems = [
     description: "Искусственный интеллект может помочь в решении проблемы бедности, но также может создать новые проблемы."
   },
   // Добавьте остальные проблемы
+];
+
+const opportunities = [
+  {
+    type: "image",
+    image: "goals.jpg",
+    alt: "Цели",
+    description: "Новые возможности для достижения целей"
+  },
+  {
+    type: "image",
+    image: "income.jpg",
+    alt: "Доход",
+    description: "Новые возможности для заработка"
+  },
+  {
+    type: "image",
+    image: "shopping.jpg",
+    alt: "Покупки",
+    description: "Новые возможности для покупок"
+  },
+  {
+    type: "image",
+    image: "investments.jpg",
+    alt: "Инвестиции",
+    description: "Новые возможности для инвестиций"
+  },
+  {
+    type: "image",
+    image: "business.jpg",
+    alt: "Бизнес",
+    description: "Новые возможности для бизнеса"
+  },
+  {
+    type: "image",
+    image: "self-realization.jpg",
+    alt: "Самореализация",
+    description: "Новые возможности для самореализации"
+  },
 ];
