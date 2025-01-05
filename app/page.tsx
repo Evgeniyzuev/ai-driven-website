@@ -12,7 +12,7 @@ export default function Home() {
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
           AiShare
         </h1>
-        <p className="text-xl md:text-2xl mb-8 max-w-2xl">
+        <p className="text-xl md:text-2xl mb-2 max-w-2xl">
           Ai меняет бизнес, экономику, мир.<br/>
           Используй преимущество сейчас!
         </p>
@@ -20,7 +20,7 @@ export default function Home() {
 
       {/* Problems section */}
       <section className="py-6 px-2">
-        <h2 className="text-3xl font-bold text-center mb-4">Глобальные проблемы</h2>
+        <h2 className="text-3xl font-bold text-center mb-0">Глобальные проблемы</h2>
         <p className="text-sm md:text-sm text-center mb-4 max-w-2xl">
           Ai может их усугубить или Ai может их решить.
           <br/>Выбор за тобой!
