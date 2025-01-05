@@ -8,8 +8,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ProfitShareAI - Бизнес будущего",
-  description: "Инновационная бизнес-модель под управлением искусственного интеллекта для решения глобальных проблем общества",
+  title: "ProfitShareAI - Business of the Future",
+  description: "Innovative AI-driven business model for solving global social problems",
 };
 
 export default function RootLayout({
@@ -17,8 +17,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Определяем язык на основе текущего URL
+  const isEnglish = typeof window !== 'undefined' && window.location.pathname.startsWith('/en');
+  
   return (
-    <html lang="ru">
+    <html lang={isEnglish ? 'en' : 'ru'}>
       <body className={`${inter.className} font-sans`}>
         <MenuButton />
         {children}
