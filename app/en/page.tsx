@@ -3,27 +3,39 @@ import { useState } from "react";
 import Image from "next/image";
 import CardSection from "../components/CardSection";
 
+interface Card {
+  type: string;
+  image: string;
+  alt: string;
+  description: string | React.ReactNode;
+}
+
 export default function Home() {
-  const [selectedCard, setSelectedCard] = useState<(typeof problems[0] | typeof opportunities[0]) | null>(null);
+  const [selectedCard, setSelectedCard] = useState<Card | null>(null);
 
   return (
     <main className="min-h-screen">
-      {/* Hero section */}
-      <section className="min-h-1/4 flex flex-col items-center justify-center p-6 text-center bg-gradient-to-b from-background to-blue-50 dark:to-blue-950">
-        <h1 className="text-4xl md:text-6xl font-bold mb-0">
-          AI is changing life
-        </h1>
-        <p className="text-xl md:text-2xl mb-2 max-w-2xl">
-          Blessing or disaster?
-        </p>
-        <p className="text-sm md:text-lg mb-0 max-w-2xl">
-          The main income for most people is salary.<br></br>
-          AI automates business and reduces jobs.<br></br>
-          Business transfers money from customers to owners.<br></br>
-          Without work, people can't buy as they used to.<br></br>
-          They participate less in the economy, and business loses customers.<br></br>
-        </p>
-      </section>
+
+      {/* blessDisaster section */}
+      <CardSection
+        title="AI is changing life"
+        subtitle={[
+          "Blessing or disaster?",
+        ]}
+        cards={blessDisaster}
+        onCardClick={setSelectedCard}
+        showTooltipOnMiddleCard={true}
+      />
+
+      {/* upgrade life section */}
+      <CardSection
+        title="Make your life better!"
+        subtitle={[
+          "I ask myself: can AI make my life better?",
+        ]}
+        cards={upgradeLife}
+        onCardClick={setSelectedCard}
+      />
 
       {/* Opportunities section */}
       <CardSection
@@ -48,23 +60,22 @@ export default function Home() {
       {/* Modal */}
       {selectedCard && (
         <div 
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-0 md:p-4 z-50"
           onClick={() => setSelectedCard(null)}
         >
           <div 
             className="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-2xl w-full"
-            onClick={(e) => e.stopPropagation()}
           >
-            <h3 className="text-2xl font-bold mb-4">{selectedCard.alt}</h3>
-            <div className="relative aspect-video mb-4">
+            <h3 className="text-2xl font-bold mb-4 p-4 md:p-0">{selectedCard.alt}</h3>
+            <div className="relative aspect-video w-full">
               <Image
                 src={`/${selectedCard.image}`}
                 alt={selectedCard.alt}
                 fill
-                className="object-cover rounded"
+                className="object-cover"
               />
             </div>
-            <p className="text-gray-600 dark:text-gray-300">
+            <p className="text-gray-600 dark:text-gray-300 p-4 md:p-0 mt-4 whitespace-pre-wrap">
               {selectedCard.description}
             </p>
           </div>
@@ -73,6 +84,48 @@ export default function Home() {
     </main>
   );
 }
+
+const blessDisaster = [
+  {
+    type: "image",
+    image: "bless.jpg",
+    alt: "Blessing",
+    description: "The main income for most people is salary. Artificial Intelligence automates business and reduces jobs. Business transfers money from customers to owners. Without work, people can't buy as they used to. They participate less in the economy, and business loses customers. But business grows and develops through customer spending. People can choose where to buy and which business to support. It is in the customer's interest that the business growth, which occurs at the expense of this customer's expenses, belongs to them and is not appropriated by other owners."
+  },
+  {
+    type: "image",
+    image: "choice.jpg",
+    alt: "Choose",
+    description: "AI is rapidly changing our world, creating both opportunities and challenges for society."
+  },
+  {
+    type: "image",
+    image: "disaster.jpg",
+    alt: "Disaster",
+    description: "The main income for most people is salary. AI automates business and reduces jobs. Business transfers money from customers to owners. Without work, people can't buy as they used to. They participate less in the economy, and business loses customers."
+  }
+];
+
+const upgradeLife = [
+  {
+    type: "image",
+    image: "rightNow.jpg",
+    alt: "Upgrade Life",
+    description: "AI can help improve various aspects of life"
+  },
+  {
+    type: "image",
+    image: "rightNow.jpg",
+    alt: "Better Life",
+    description: "Technology opens new possibilities for personal growth and development"
+  },
+  {
+    type: "image",
+    image: "rightNow.jpg",
+    alt: "Future Life",
+    description: "The future holds endless possibilities for those who embrace change"
+  }
+];
 
 const problems = [
   {
@@ -92,7 +145,7 @@ const problems = [
     image: "poverty.webp",
     alt: "Poverty",
     description: "Artificial Intelligence can help solve poverty issues, but it may also create new challenges."
-  },
+  }
 ];
 
 const opportunities = [
@@ -131,5 +184,5 @@ const opportunities = [
     image: "self-realization.jpg",
     alt: "Self-realization",
     description: "New opportunities for self-realization"
-  },
+  }
 ]; 

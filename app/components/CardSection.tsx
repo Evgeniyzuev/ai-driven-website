@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Dispatch, SetStateAction } from "react";
 import Image from "next/image";
 import Tooltip from "./Tooltip";
 
@@ -8,17 +8,18 @@ interface Card {
   type: string;
   image: string;
   alt: string;
-  description: string;
+  description: string | React.ReactNode;
 }
 
 interface CardSectionProps {
   title: string;
   subtitle: string[];
   cards: Card[];
-  onCardClick: (card: Card) => void;
+  onCardClick: (card: Card) => void | Dispatch<SetStateAction<Card | null>>;
+  showTooltipOnMiddleCard?: boolean;
 }
 
-export default function CardSection({ title, subtitle, cards, onCardClick }: CardSectionProps) {
+export default function CardSection({ title, subtitle, cards, onCardClick, showTooltipOnMiddleCard }: CardSectionProps) {
   const [hasClicked, setHasClicked] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
 
@@ -28,7 +29,7 @@ export default function CardSection({ title, subtitle, cards, onCardClick }: Car
       if (!hasClicked) {
         setShowTooltip(true);
       }
-    }, 2000);
+    }, 0);
 
     return () => clearTimeout(tooltipTimer);
   }, [hasClicked]);
@@ -57,7 +58,7 @@ export default function CardSection({ title, subtitle, cards, onCardClick }: Car
             className="aspect-square bg-white dark:bg-gray-800 cursor-pointer relative"
             onClick={() => handleCardClick(card)}
           >
-            {index === 1 && <Tooltip isVisible={showTooltip} />}
+            {index === 1 && showTooltipOnMiddleCard && <Tooltip isVisible={showTooltip} />}
             <div className="relative w-full h-full">
               <Image
                 src={`/${card.image}`}

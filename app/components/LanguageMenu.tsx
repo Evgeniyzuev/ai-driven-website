@@ -24,7 +24,7 @@ export default function LanguageMenu() {
   };
 
   return (
-    <div className="absolute top-16 right-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-2">
+    <div className="absolute top-16 right-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-2 z-50">
       {languages.map((lang) => (
         <Link
           key={lang.code}
