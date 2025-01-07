@@ -65,7 +65,7 @@ export const texts = {
       cards: [
         {
           type: "image",
-          image: "goals.jpg",
+          image: "goals.webp",
           alt: "Цели",
           description: "Новые возможности для достижения целей"
         },
@@ -95,7 +95,7 @@ export const texts = {
         },
         {
           type: "image",
-          image: "self-realization.jpg",
+          image: "self-realization.webp",
           alt: "Самореализация",
           description: "Новые возможности для самореализации"
         },
@@ -192,7 +192,7 @@ export const texts = {
       cards: [
         {
           type: "image",
-          image: "goals.jpg",
+          image: "goals.webp",
           alt: "Goals",
           description: "New opportunities for achieving goals"
         },
@@ -222,7 +222,7 @@ export const texts = {
         },
         {
           type: "image",
-          image: "self-realization.jpg",
+          image: "self-realization.webp",
           alt: "Self-realization",
           description: "New opportunities for self-realization"
         }
