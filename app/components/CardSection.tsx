@@ -41,7 +41,7 @@ export default function CardSection({ title, subtitle, cards, onCardClick, showT
   };
 
   return (
-    <section className="py-6 px-2">
+    <section className="py-4 px-2">
       <h2 className="text-2xl md:text-4xl font-bold text-center mb-0">{title}</h2>
       <p className="text-lg md:text-2xl text-center mb-4 max-w-2xl mx-auto">
         {subtitle.map((line, index) => (

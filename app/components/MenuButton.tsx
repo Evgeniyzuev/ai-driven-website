@@ -1,14 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import LanguageMenu from './LanguageMenu';
+import { LanguageContext } from '../contexts/LanguageContext';
 
-interface MenuButtonProps {
-  setLanguage: (lang: 'en' | 'ru') => void;
-}
-
-export default function MenuButton({ setLanguage }: MenuButtonProps) {
+export default function MenuButton() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { setLanguage } = useContext(LanguageContext);
 
   return (
     <div className="relative">

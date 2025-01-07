@@ -1,17 +1,11 @@
 'use client';
 
-import { usePathname, useRouter } from 'next/navigation';
-
 interface LanguageMenuProps {
   setLanguage: (lang: 'en' | 'ru') => void;
   onClose?: () => void;
 }
 
 export default function LanguageMenu({ setLanguage, onClose }: LanguageMenuProps) {
-  const pathname = usePathname();
-  const router = useRouter();
-  const isEnglish = pathname.startsWith('/en');
-
   const languages = [
     { code: 'ru', label: 'Русский' },
     { code: 'en', label: 'English' }
@@ -19,10 +13,6 @@ export default function LanguageMenu({ setLanguage, onClose }: LanguageMenuProps
 
   const handleLanguageChange = (langCode: 'en' | 'ru') => {
     setLanguage(langCode);
-    const basePath = isEnglish ? pathname.replace('/en', '') : pathname;
-    const normalizedPath = basePath || '/';
-    const newPath = langCode === 'en' ? `/en${normalizedPath}` : normalizedPath;
-    router.push(newPath);
     if (onClose) onClose();
   };
 

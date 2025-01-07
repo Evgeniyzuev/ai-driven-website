@@ -1,15 +1,10 @@
 'use client';
 
-import { useState } from "react";
 import HomePage from "./components/HomePage";
-import { usePathname } from 'next/navigation';
-
+import { useContext } from "react";
+import { LanguageContext } from "./contexts/LanguageContext";
 
 export default function Home() {
-  const pathname = usePathname();
-  const [language, setLanguage] = useState<'en' | 'ru'>(
-    pathname.startsWith('/en') ? 'en' : 'ru'
-  );
-
+  const { language, setLanguage } = useContext(LanguageContext);
   return <HomePage language={language} setLanguage={setLanguage} />;
 }

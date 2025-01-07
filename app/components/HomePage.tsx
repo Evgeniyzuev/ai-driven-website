@@ -63,8 +63,8 @@ export default function HomePage({ language, setLanguage }: HomePageProps) {
           onClick={() => setSelectedCard(null)}
         >
           <div 
-            className="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-2xl w-full"
-            onClick={e => e.stopPropagation()}
+            className="bg-white dark:bg-gray-800 rounded-lg p-2 max-w-2xl w-full"
+            // onClick={e => e.stopPropagation()}
           >
             <h3 className="text-2xl font-bold mb-4 p-4 md:p-0">{selectedCard.alt}</h3>
             <div className="relative aspect-video w-full">
@@ -75,7 +75,7 @@ export default function HomePage({ language, setLanguage }: HomePageProps) {
                 className="object-cover"
               />
             </div>
-            <p className="text-gray-600 dark:text-gray-300 p-4 md:p-0 mt-4 whitespace-pre-wrap">
+            <p className="text-gray-600 dark:text-gray-300 p-0 md:p-0 mt-4 whitespace-pre-wrap">
               {selectedCard.description}
             </p>
           </div>

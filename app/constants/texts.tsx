@@ -13,7 +13,7 @@ export const texts = {
         {
             type: "image",
             image: "choice.jpg",
-            alt: "Выбирай👆",
+            alt: "Выбирай",
             description: "Все зависит от нас."
           },
           {
@@ -34,8 +34,8 @@ export const texts = {
           image: "rightNow.jpg",
           alt: "Как?",
           description: 
-                    <>
-                Я задаю себе вопрос: сможет ли Ai сделать намного лучше мою жизнь? Исполнить мои желания?<br /><br />
+                <>
+                Я задаю себе вопрос: сможет ли Ai сделать намного лучше мою жизнь?<br />Исполнить мои желания?<br /><br />
                 
                 Уже сегодня существует Ai частично способный на это.<br /><br />
                 
@@ -173,7 +173,7 @@ export const texts = {
         },
         {
           type: "image",
-          image: "rightNow.jpg",
+          image: "choice.jpg",
           alt: "Wish",
           description: "Technology opens new possibilities for personal growth and development"
         },
