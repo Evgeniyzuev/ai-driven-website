@@ -46,13 +46,13 @@ export const texts = {
         },
         {
             type: "image",
-            image: "choice.jpg",
+            image: "wish.jpg",
             alt: "Желания",
             description: "Искусственный интеллект может автоматизировать многие рабочие места, что может привести к временной безработице. Однако он также создает новые возможности и профессии."
           },
           {
             type: "image",
-            image: "rightNow.jpg",
+            image: "wish2.jpg",
             alt: "Сейчас",
             description: "Основной доход для большинства людей - зарплата. Искусственный интеллект автоматизирует бизнес и сокращает рабочие места. Бизнес перекачивает деньги от покупателей к владельцам. Без работы люди не могут покупать также как раньше. Они меньше участвуют в экономике, а бизнес теряет покупателей. Но бизнес растет и развивается за счет расходов покупателей. Люди могут выбирать где покупать и какой бизнес поддерживать. В интересах покупателя, чтобы рост бизнеса, который происходит за счет расходов этого покупателя, принадлежал ему самому, а не присваивался другими владельцами."
           },
@@ -173,13 +173,13 @@ export const texts = {
         },
         {
           type: "image",
-          image: "choice.jpg",
+          image: "wish.jpg",
           alt: "Wish",
           description: "Technology opens new possibilities for personal growth and development"
         },
         {
           type: "image",
-          image: "rightNow.jpg",
+          image: "wish2.jpg",
           alt: "Now",
           description: "The future holds endless possibilities for those who embrace change"
         }
