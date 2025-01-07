@@ -3,7 +3,11 @@
 import { useState } from 'react';
 import LanguageMenu from './LanguageMenu';
 
-export default function MenuButton() {
+interface MenuButtonProps {
+  setLanguage: (lang: 'en' | 'ru') => void;
+}
+
+export default function MenuButton({ setLanguage }: MenuButtonProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -27,7 +31,12 @@ export default function MenuButton() {
           />
         </svg>
       </button>
-      {isMenuOpen && <LanguageMenu />}
+      {isMenuOpen && (
+        <LanguageMenu 
+          setLanguage={setLanguage} 
+          onClose={() => setIsMenuOpen(false)} 
+        />
+      )}
     </div>
   );
 } 

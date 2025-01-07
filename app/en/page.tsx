@@ -31,7 +31,7 @@ export default function Home() {
       <CardSection
         title="Make your life better!"
         subtitle={[
-          "I ask myself: can AI make my life better?",
+          "Question: can AI make my life better?",
         ]}
         cards={upgradeLife}
         onCardClick={setSelectedCard}
@@ -110,19 +110,24 @@ const upgradeLife = [
   {
     type: "image",
     image: "rightNow.jpg",
-    alt: "Upgrade Life",
-    description: "AI can help improve various aspects of life"
+    alt: "How?",
+    description: <>
+      I ask myself: can AI make my life better?<br /><br />
+      Yes, it can!<br /><br />
+      But it won't help me. It's owned by someone else. It works in their interests. I can use their services on their terms. This doesn't guarantee benefits for me, only for the owners of this business.<br /><br />
+      Instead, it's better to become the owner of an AI business!
+    </>
   },
   {
     type: "image",
     image: "rightNow.jpg",
-    alt: "Better Life",
+    alt: "Wish",
     description: "Technology opens new possibilities for personal growth and development"
   },
   {
     type: "image",
     image: "rightNow.jpg",
-    alt: "Future Life",
+    alt: "Now",
     description: "The future holds endless possibilities for those who embrace change"
   }
 ];

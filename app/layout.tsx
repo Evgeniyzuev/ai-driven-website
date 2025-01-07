@@ -1,7 +1,9 @@
+// 'use client';
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import MenuButton from "./components/MenuButton";
+import LanguageProvider from "./components/LanguageProvider";
 
 const inter = Inter({
   subsets: ["latin", "cyrillic"],
@@ -17,14 +19,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Определяем язык на основе текущего URL
-  const isEnglish = typeof window !== 'undefined' && window.location.pathname.startsWith('/en');
-  
   return (
-    <html lang={isEnglish ? 'en' : 'ru'}>
+    <html>
       <body className={`${inter.className} font-sans`}>
-        <MenuButton />
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );
