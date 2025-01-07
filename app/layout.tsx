@@ -8,7 +8,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ProfitShareAI - Business of the Future",
+  title: "WeAi - Business of the Future",
   description: "Innovative AI-driven business model for solving global social problems",
 };
 

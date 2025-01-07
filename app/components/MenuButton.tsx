@@ -9,7 +9,7 @@ export default function MenuButton() {
   return (
     <div className="relative">
       <button
-        className="fixed top-4 right-4 w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow-lg flex items-center justify-center z-50 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+        className="fixed top-2 right-2 w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow-lg flex items-center justify-center z-50 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
         <svg
