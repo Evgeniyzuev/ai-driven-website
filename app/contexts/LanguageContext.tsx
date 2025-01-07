@@ -13,17 +13,31 @@ export const LanguageContext = createContext<LanguageContextType>({
 });
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<'en' | 'ru'>(() => {
-    if (typeof document !== 'undefined') {
-      return document.cookie.split('; ').find(row => row.startsWith('language='))?.split('=')[1] as 'en' | 'ru' || 'ru';
-    }
-    return 'ru';
-  });
+  const [language, setLanguage] = useState<'en' | 'ru'>('ru');
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    document.cookie = `language=${language};path=/;max-age=31536000`;
-    localStorage.setItem('language', language);
-  }, [language]);
+    const savedLanguage = document.cookie
+      .split('; ')
+      .find(row => row.startsWith('language='))
+      ?.split('=')[1] as 'en' | 'ru';
+    
+    if (savedLanguage) {
+      setLanguage(savedLanguage);
+    }
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (isClient) {
+      document.cookie = `language=${language};path=/;max-age=31536000`;
+      localStorage.setItem('language', language);
+    }
+  }, [language, isClient]);
+
+  if (!isClient) {
+    return null;
+  }
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>

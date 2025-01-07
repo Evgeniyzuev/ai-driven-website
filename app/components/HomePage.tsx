@@ -66,7 +66,7 @@ export default function HomePage({ language, setLanguage }: HomePageProps) {
             className="bg-white dark:bg-gray-800 rounded-lg p-2 max-w-2xl w-full"
             // onClick={e => e.stopPropagation()}
           >
-            <h3 className="text-2xl font-bold mb-4 p-4 md:p-0">{selectedCard.alt}</h3>
+            {/* <h3 className="text-2xl font-bold mb-0 p-2 md:p-0">{selectedCard.alt}</h3> */}
             <div className="relative aspect-video w-full">
               <Image
                 src={`/${selectedCard.image}`}

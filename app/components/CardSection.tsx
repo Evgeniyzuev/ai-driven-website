@@ -66,6 +66,9 @@ export default function CardSection({ title, subtitle, cards, onCardClick, showT
                 width={500}
                 height={500}
                 className="w-full h-full object-cover"
+                priority={index < 3}
+                loading={index < 3 ? "eager" : "lazy"}
+                quality={75}
               />
               <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end justify-center p-2">
                 <h3 className="text-sm md:text-2xl font-bold text-white text-center w-full">{card.alt}</h3>
