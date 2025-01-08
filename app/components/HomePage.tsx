@@ -67,13 +67,15 @@ export default function HomePage({ language, setLanguage }: HomePageProps) {
             // onClick={e => e.stopPropagation()}
           >
             {/* <h3 className="text-2xl font-bold mb-0 p-2 md:p-0">{selectedCard.alt}</h3> */}
-            <div className="relative aspect-video w-full">
-              <Image
-                src={`/${selectedCard.image}`}
-                alt={selectedCard.alt}
-                fill
-                className="object-cover"
-              />
+            <div className="relative aspect-video px-2 md:px-4 w-full">
+              <div className="absolute inset-2">
+                <Image
+                  src={`/${selectedCard.image}`}
+                  alt={selectedCard.alt}
+                  fill
+                  className="object-cover rounded-lg"
+                />
+              </div>
             </div>
             <p className="text-gray-600 dark:text-gray-300 p-2 md:p-0 mt-0 whitespace-pre-wrap">
               {selectedCard.description}
