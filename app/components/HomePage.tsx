@@ -63,7 +63,7 @@ export default function HomePage({ language, setLanguage }: HomePageProps) {
           onClick={() => setSelectedCard(null)}
         >
           <div 
-            className="bg-white dark:bg-gray-800 rounded-lg p-2 max-w-2xl w-full"
+            className="bg-white dark:bg-gray-800 rounded-lg p-0 max-w-2xl w-full"
             // onClick={e => e.stopPropagation()}
           >
             {/* <h3 className="text-2xl font-bold mb-0 p-2 md:p-0">{selectedCard.alt}</h3> */}
@@ -75,9 +75,21 @@ export default function HomePage({ language, setLanguage }: HomePageProps) {
                 className="object-cover"
               />
             </div>
-            <p className="text-gray-600 dark:text-gray-300 p-0 md:p-0 mt-4 whitespace-pre-wrap">
+            <p className="text-gray-600 dark:text-gray-300 p-2 md:p-0 mt-0 whitespace-pre-wrap">
               {selectedCard.description}
             </p>
+            
+            <div className="flex justify-center mt-4 pb-4">
+              <a
+                href="https://t.me/WeAiBot_bot/WeAi?startapp=6251757715"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-2 bg-blue-600 animate-pulse text-white rounded-lg transition-all duration-200 hover:bg-blue-700 hover:scale-105"
+                // className="px-6 py-2 bg-gradient-animated animate-gradient text-white rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-lg"
+              >
+                {language === 'ru' ? 'Начать' : 'Start'}
+              </a>
+            </div>
           </div>
         </div>
       )}

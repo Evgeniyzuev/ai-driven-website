@@ -17,7 +17,7 @@ export default function LanguageMenu({ setLanguage, onClose }: LanguageMenuProps
   };
 
   return (
-    <div className="absolute top-16 right-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-2 z-50">
+    <div className="fixed top-14 right-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-2 z-50">
       {languages.map((lang) => (
         <button
           key={lang.code}
