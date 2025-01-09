@@ -30,6 +30,25 @@ export const texts = {
             alt: "Выбирай",
             description:
             <>
+            Приведёт ли Ai к процветанию или катастрофе зависит от наших действий.<br /><br /> 
+
+            Корпорации могут создавать Ai, задача которых концентрировать власть и богатство и исключать ненужных людей.<br />
+            Ai становятся умнее и эффективнее с каждым годом. <br />
+            Все больше людей станут ненужными со временем и останутся ни с чем.<br /><br /> 
+
+            Есть Ai цель которых безграничная концентрация власти и богатства.<br /> 
+            Есть Ai которые служат интересам людей в равной степени, гарантируют безопасность и независимость.<br /><br />
+
+            Какой Ai вы выберете?
+            </>
+
+          },
+          {
+            type: "image",
+            image: "disaster.jpg",
+            alt: "Катастрофа",
+            description: 
+            <>
             Кажется что Ai ещё далёк от того, чтобы полностью заменять людей. 
             Но многие технологические компании уже прекратили нанимать новых сотрудников.<br />
             Например, в Google сегодня половина кода пишется с помощью ИИ.
@@ -41,15 +60,8 @@ export const texts = {
             Массовая безработица, вызванная автоматизацией, может привести к социальной нестабильности.
             Усиление концентрации власти и богатства приведет к взрыву неравенства, социальной напряженности, преступности и конфликтам.
 
-            Только Ai соблюдающий права, действующий в интересах всех людей, доступный для каждого позволит избежать катастрофы.<br /> 
-            Какой Ai ты выберешь для себя и для всех нас?
+            Только Ai соблюдающий права, действующий в интересах всех людей, доступный для каждого позволит избежать катастрофы.<br />
             </>
-          },
-          {
-            type: "image",
-            image: "disaster.jpg",
-            alt: "Катастрофа",
-            description: "Основной доход для большинства людей - зарплата. Искусственный интеллект автоматизирует бизнес и сокращает рабочие места. Бизнес перекачивает деньги от покупателей к владельцам. Без работы люди не могут покупать также как раньше. Они меньше участвуют в экономике, а бизнес теряет покупателей. Но бизнес растет и развивается за счет расходов покупателей. Люди могут выбирать где покупать и какой бизнес поддерживать. В интересах покупателя, чтобы рост бизнеса, который происходит за счет расходов этого покупателя, принадлежал ему самому, а не присваивался другими владельцами."
           },
         // Добавьте остальные карточки для этой секции
       ]
@@ -202,19 +214,57 @@ export const texts = {
           type: "image",
           image: "bless.jpg",
           alt: "Prosperity",
-          description: "The main income for most people is salary. Artificial Intelligence automates business and reduces jobs. Business transfers money from customers to owners. Without work, people can't buy as they used to. They participate less in the economy, and business loses customers. But business grows and develops through customer spending. People can choose where to buy and which business to support. It is in the customer's interest that the business growth, which occurs at the expense of this customer's expenses, belongs to them and is not appropriated by other owners."
+          description: 
+          <>
+          Ai already demonstrates impressive achievements in various fields, from medicine and biotechnology to education, creativity, and customer service:<br />
+          🔵 Protein structure decoding<br />
+          🔵 Disease diagnosis improvement<br />
+          🔵 New materials discovery<br />
+          🔵 Chip and rocket engine design<br />
+          🔵 Code automation: AI becomes the best programmer<br />
+          🔵 Music, text, and image generation indistinguishable from real<br />
+          🔵 Realistic video and game generation<br />
+          🔵 Recommendation algorithms serve billions of people<br />
+          🔵 Autonomous vehicles already on the roads<br />
+          And much more. Ai has the potential to change life more than any previous technology.
+          </>
         },
         {
           type: "image",
           image: "choice.jpg",
           alt: "Choose",
-          description: "AI is rapidly changing our world, creating both opportunities and challenges for society."
+          description: 
+          <>
+          Whether Ai will lead to prosperity or disaster depends on our actions.<br /><br />
+
+          Corporations can create Ai with the goal of concentrating power and wealth and excluding unnecessary people.<br /> 
+          Ai become smarter and more efficient every year.<br />
+          More and more people will become unnecessary over time and will remain without anything.<br /><br />
+
+          There are Ai with unlimited goals of concentrating power and wealth.<br />
+          There are Ai that serve the interests of people in equal measure, ensuring safety and independence.<br /><br />
+          Which Ai will you choose?
+          </>
         },
         {
           type: "image",
           image: "disaster.jpg",
           alt: "Disaster",
-          description: "The main income for most people is salary. AI automates business and reduces jobs. Business transfers money from customers to owners. Without work, people can't buy as they used to. They participate less in the economy, and business loses customers."
+          description: 
+          <>
+          It seems that Ai is still far from being able to fully replace humans.
+          But many technological companies have already stopped hiring new employees.
+          For example, at Google, half of the code is now written with AI.
+          This means that right now, something is happening that determines the future.
+          On the one hand, AI can lead to prosperity.
+          Automation of routine tasks frees people for more creative and intellectual work.
+          Improvements in healthcare and agriculture can significantly improve quality of life.
+          However, on the other hand, AI can lead to disaster if its development is not controlled.
+          Mass unemployment, caused by automation, can lead to social instability.
+          Concentration of power and wealth can lead to a social explosion of inequality, social tension, crime, and conflicts.
+
+          Only Ai that respects rights, acts in the interests of all people, and is accessible to everyone can prevent disaster.
+          </>
         },
         // Add other cards
       ]
