@@ -58,6 +58,9 @@ export default function HomePage({ language, setLanguage }: HomePageProps) {
         onCardClick={setSelectedCard}
       />
 
+      {/* AI Future section */}
+      {/* Секция удалена, так как соответствующий контент был объединен с секцией blessDisaster */}
+
       {/* Problems section */}
       <CardSection
         title={t.problems.title}
