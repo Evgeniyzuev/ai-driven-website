@@ -26,3 +26,50 @@ body {
     scroll-behavior: smooth;
   }
 }
+
+/* Градиентная анимация для кнопок */
+.bg-gradient-animated {
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899, #3b82f6);
+  background-size: 300% 100%;
+  animation: gradient-animation 8s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Улучшенная адаптивность для мобильных устройств */
+@media (max-width: 640px) {
+  .card-section {
+    padding: 1rem 0.5rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+/* Улучшения для доступности */
+:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Плавные переходы для темной темы */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
