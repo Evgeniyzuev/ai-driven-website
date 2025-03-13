@@ -40,7 +40,6 @@ export default function HomePage({ language, setLanguage }: HomePageProps) {
         subtitle={t.blessDisaster.subtitle}
         cards={t.blessDisaster.cards}
         onCardClick={setSelectedCard}
-        showTooltipOnMiddleCard={true}
       />
 
       {/* upgrade life section */}
