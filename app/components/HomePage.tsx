@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import CardSection from "./CardSection";
 import { texts } from "../constants/texts";
@@ -20,6 +20,17 @@ interface Card {
 export default function HomePage({ language, setLanguage }: HomePageProps) {
   const [selectedCard, setSelectedCard] = useState<Card | null>(null);
   const t = texts[language];
+
+  useEffect(() => {
+    if (selectedCard) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedCard]);
 
   return (
     <main className="min-h-screen">
