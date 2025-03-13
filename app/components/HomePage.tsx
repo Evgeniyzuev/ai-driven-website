@@ -59,18 +59,18 @@ export default function HomePage({ language, setLanguage }: HomePageProps) {
       {/* Modal */}
       {selectedCard && (
         <div 
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-0 md:p-4 z-50"
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-start md:items-center justify-center p-0 md:p-4 z-50 overflow-y-auto"
           onClick={() => setSelectedCard(null)}
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-title"
         >
           <div 
-            className="bg-white dark:bg-gray-800 rounded-lg p-0 max-w-2xl w-full relative"
+            className="bg-white dark:bg-gray-800 rounded-lg p-0 max-w-2xl w-full relative my-4 md:my-0"
             onClick={e => e.stopPropagation()}
           >
             <button 
-              className="absolute top-2 right-2 z-10 bg-white dark:bg-gray-700 rounded-full p-1 shadow-md"
+              className="sticky top-2 float-right right-2 z-10 bg-white dark:bg-gray-700 rounded-full p-1 shadow-md m-2"
               onClick={() => setSelectedCard(null)}
               aria-label={language === 'ru' ? 'Закрыть' : 'Close'}
             >
