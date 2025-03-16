@@ -50,6 +50,14 @@ export default function HomePage({ language, setLanguage }: HomePageProps) {
         onCardClick={setSelectedCard}
       />
 
+      {/* Personal AI Assistant section */}
+      <CardSection
+        title={t.personalAssistant.title}
+        subtitle={t.personalAssistant.subtitle}
+        cards={t.personalAssistant.cards}
+        onCardClick={setSelectedCard}
+      />
+
       {/* Opportunities section */}
       <CardSection
         title={t.opportunities.title}

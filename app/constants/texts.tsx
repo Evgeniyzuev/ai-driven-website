@@ -132,6 +132,75 @@ export const texts = {
         // Добавьте остальные карточки
       ]
     },
+    personalAssistant: {
+      title: "Персональный Ai ассистент",
+      subtitle: [],
+      cards: [
+        {
+          type: "image",
+          image: "ai-assistant.jpg",
+          alt: "Будущее уже здесь",
+          description: 
+          <>
+          Через несколько лет большинство людей будет использовать персональных Ai ассистентов ежедневно.<br /><br />
+
+          Мир становится настолько сложным, что без помощи Ai человек:<br />
+          ⚠️ Тонет в потоке информации<br />
+          ⚠️ Теряет важные связи и контакты<br />
+          ⚠️ Упускает возможности<br />
+          ⚠️ Отстает от быстро меняющейся жизни<br />
+          ⚠️ Проигрывает в конкурентной борьбе<br /><br />
+
+          Персональные Ai ассистенты изменят то, как мы взаимодействуем с интернетом. Они заменят поисковики, социальные сети, новостные ленты и рекомендательные алгоритмы.<br /><br />
+
+          Люди перестанут бездумно скроллить ленты и переходить с сайта на сайт. Вместо этого они будут формулировать свои потребности, а Ai ассистент будет обрабатывать информацию и предоставлять готовые решения.
+          </>
+        },
+        {
+          type: "image",
+          image: "ai-functions.jpg",
+          alt: "Безграничные возможности",
+          description: 
+          <>
+          Персональный Ai ассистент может делать всё необходимое для достижения ваших целей и исполнения желаний:<br /><br />
+
+          🔵 Планирование и организация времени<br />
+          🔵 Постановка задач и отслеживание прогресса<br />
+          🔵 Личный коуч, тренер и наставник<br />
+          🔵 Бизнес-партнер, консультант и аналитик<br />
+          🔵 Заказчик и исполнитель проектов<br />
+          🔵 Помощник в обучении и саморазвитии<br />
+          🔵 Собеседник и советчик<br /><br />
+
+          Ваш персональный Ai ассистент знает ваши предпочтения, цели и ценности. Он работает исключительно в ваших интересах, помогая принимать лучшие решения и достигать желаемых результатов.<br /><br />
+
+          Ai ассистенты также связывают людей со схожими интересами, согласовывают их потребности и создают возможности для кооперации вместо конкуренции, формируя новую совместную экономику.
+          </>
+        },
+        {
+          type: "image",
+          image: "ai-try-now.jpg",
+          alt: "Попробуй сейчас!",
+          description: 
+          <>
+          Не ждите будущего — начните использовать персонального Ai ассистента уже сегодня!<br /><br />
+
+          WeAi предлагает доступ к передовым технологиям искусственного интеллекта, которые работают в ваших интересах.<br /><br />
+
+          Наш Ai ассистент:<br />
+          ✅ Принадлежит сообществу пользователей<br />
+          ✅ Защищает вашу приватность<br />
+          ✅ Не манипулирует вашим вниманием<br />
+          ✅ Не продает ваши данные<br />
+          ✅ Помогает достигать ваших целей<br /><br />
+
+          Присоединяйтесь к WeAi сейчас и станьте частью будущего, где технологии служат людям, а не корпорациям.<br /><br />
+
+          Начните свой путь к более продуктивной, осознанной и успешной жизни с персональным Ai ассистентом от WeAi!
+          </>
+        }
+      ]
+    },
     opportunities: {
       title: "Новые возможности",
       subtitle: [],
@@ -342,6 +411,75 @@ export const texts = {
           </>
         }
         // Add other cards
+      ]
+    },
+    personalAssistant: {
+      title: "Personal AI Assistant",
+      subtitle: [],
+      cards: [
+        {
+          type: "image",
+          image: "ai-assistant.jpg",
+          alt: "The Future is Here",
+          description: 
+          <>
+          In a few years, most people will be using personal AI assistants daily.<br /><br />
+
+          The world is becoming so complex that without AI help, a person:<br />
+          ⚠️ Drowns in the flood of information<br />
+          ⚠️ Loses important connections and contacts<br />
+          ⚠️ Misses opportunities<br />
+          ⚠️ Falls behind in a rapidly changing world<br />
+          ⚠️ Loses in competitive environments<br /><br />
+
+          Personal AI assistants will change how we interact with the internet. They will replace search engines, social networks, news feeds, and recommendation algorithms.<br /><br />
+
+          People will stop mindlessly scrolling feeds and jumping from site to site. Instead, they will articulate their needs, and the AI assistant will process information and provide ready-made solutions.
+          </>
+        },
+        {
+          type: "image",
+          image: "ai-functions.jpg",
+          alt: "Limitless Possibilities",
+          description: 
+          <>
+          A personal AI assistant can do everything necessary to achieve your goals and fulfill your desires:<br /><br />
+
+          🔵 Planning and time management<br />
+          🔵 Task setting and progress tracking<br />
+          🔵 Personal coach, trainer, and mentor<br />
+          🔵 Business partner, consultant, and analyst<br />
+          🔵 Project client and executor<br />
+          🔵 Learning and self-development assistant<br />
+          🔵 Conversationalist and advisor<br /><br />
+
+          Your personal AI assistant knows your preferences, goals, and values. It works exclusively in your interests, helping you make better decisions and achieve desired results.<br /><br />
+
+          AI assistants also connect people with similar interests, coordinate their needs, and create opportunities for cooperation instead of competition, forming a new collaborative economy.
+          </>
+        },
+        {
+          type: "image",
+          image: "ai-try-now.jpg",
+          alt: "Try It Now!",
+          description: 
+          <>
+          Don't wait for the future — start using a personal AI assistant today!<br /><br />
+
+          WeAi offers access to cutting-edge artificial intelligence technologies that work in your interests.<br /><br />
+
+          Our AI assistant:<br />
+          ✅ Belongs to the user community<br />
+          ✅ Protects your privacy<br />
+          ✅ Doesn't manipulate your attention<br />
+          ✅ Doesn't sell your data<br />
+          ✅ Helps you achieve your goals<br /><br />
+
+          Join WeAi now and become part of a future where technology serves people, not corporations.<br /><br />
+
+          Start your journey to a more productive, mindful, and successful life with a personal AI assistant from WeAi!
+          </>
+        }
       ]
     },
     opportunities: {
